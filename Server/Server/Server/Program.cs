@@ -115,6 +115,7 @@ namespace Server
                     Array.Copy(buffer, _data, _bytecount);
 
                     //Data Hnadeling
+                    Console.WriteLine($"{socket.Client.RemoteEndPoint} say {Encoding.ASCII.GetString(buffer)}");
 
                     stream.BeginRead(buffer, 0, databuffersize, readcallback, null);
                 }
