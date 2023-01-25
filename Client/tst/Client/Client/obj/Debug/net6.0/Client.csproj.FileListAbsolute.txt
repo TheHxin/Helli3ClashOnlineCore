@@ -1,0 +1,15 @@
+F:\programing\Python\2023\Helli3\HelliClash\Core\Online\Helli3ClashOnlineCore\Client\tst\Client\Client\bin\Debug\net6.0\Client.exe
+F:\programing\Python\2023\Helli3\HelliClash\Core\Online\Helli3ClashOnlineCore\Client\tst\Client\Client\bin\Debug\net6.0\Client.deps.json
+F:\programing\Python\2023\Helli3\HelliClash\Core\Online\Helli3ClashOnlineCore\Client\tst\Client\Client\bin\Debug\net6.0\Client.runtimeconfig.json
+F:\programing\Python\2023\Helli3\HelliClash\Core\Online\Helli3ClashOnlineCore\Client\tst\Client\Client\bin\Debug\net6.0\Client.dll
+F:\programing\Python\2023\Helli3\HelliClash\Core\Online\Helli3ClashOnlineCore\Client\tst\Client\Client\bin\Debug\net6.0\Client.pdb
+F:\programing\Python\2023\Helli3\HelliClash\Core\Online\Helli3ClashOnlineCore\Client\tst\Client\Client\obj\Debug\net6.0\Client.csproj.AssemblyReference.cache
+F:\programing\Python\2023\Helli3\HelliClash\Core\Online\Helli3ClashOnlineCore\Client\tst\Client\Client\obj\Debug\net6.0\Client.GeneratedMSBuildEditorConfig.editorconfig
+F:\programing\Python\2023\Helli3\HelliClash\Core\Online\Helli3ClashOnlineCore\Client\tst\Client\Client\obj\Debug\net6.0\Client.AssemblyInfoInputs.cache
+F:\programing\Python\2023\Helli3\HelliClash\Core\Online\Helli3ClashOnlineCore\Client\tst\Client\Client\obj\Debug\net6.0\Client.AssemblyInfo.cs
+F:\programing\Python\2023\Helli3\HelliClash\Core\Online\Helli3ClashOnlineCore\Client\tst\Client\Client\obj\Debug\net6.0\Client.csproj.CoreCompileInputs.cache
+F:\programing\Python\2023\Helli3\HelliClash\Core\Online\Helli3ClashOnlineCore\Client\tst\Client\Client\obj\Debug\net6.0\Client.dll
+F:\programing\Python\2023\Helli3\HelliClash\Core\Online\Helli3ClashOnlineCore\Client\tst\Client\Client\obj\Debug\net6.0\refint\Client.dll
+F:\programing\Python\2023\Helli3\HelliClash\Core\Online\Helli3ClashOnlineCore\Client\tst\Client\Client\obj\Debug\net6.0\Client.pdb
+F:\programing\Python\2023\Helli3\HelliClash\Core\Online\Helli3ClashOnlineCore\Client\tst\Client\Client\obj\Debug\net6.0\Client.genruntimeconfig.cache
+F:\programing\Python\2023\Helli3\HelliClash\Core\Online\Helli3ClashOnlineCore\Client\tst\Client\Client\obj\Debug\net6.0\ref\Client.dll
