@@ -45,7 +45,7 @@ namespace Server
             listener.BeginAcceptTcpClient(new AsyncCallback(connectcallback), null);
 
             Console.WriteLine($"Income connnection from {client.Client.RemoteEndPoint}");
-            for(int s = 1; s<= MaxClient; s++)
+            for (int s = 1; s <= MaxClient; s++)
             {
                 if (Clients[s].tcp.socket == null)
                 {
@@ -58,7 +58,7 @@ namespace Server
         }
         private static void DictSetup()
         {
-            for(int s = 1; s <= MaxClient; s++)
+            for (int s = 1; s <= MaxClient; s++)
             {
                 Clients.Add(s, new Client(s));
             }
@@ -83,6 +83,7 @@ namespace Server
             private readonly int id;
             private NetworkStream? stream;
             private byte[]? buffer;
+            private byte[]? sendbuffer;
 
             public TCP(int _id)
             {
@@ -115,7 +116,7 @@ namespace Server
                     Array.Copy(buffer, _data, _bytecount);
 
                     //Data Hnadeling
-                    Console.WriteLine($"{socket.Client.RemoteEndPoint} say {Encoding.ASCII.GetString(buffer)}");
+                    Console.WriteLine($"{socket.Client.RemoteEndPoint} say {Encoding.ASCII.GetString(_data)}");
 
                     stream.BeginRead(buffer, 0, databuffersize, readcallback, null);
                 }
@@ -123,6 +124,67 @@ namespace Server
                 {
                     Console.WriteLine($"Exaeption {e} occured !");
                 }
+            }
+        }
+    }
+    class ServerSend
+    {
+
+    }
+    class Packet
+    {
+        public static string MSG_string;
+        public static byte[] MSG_byte;
+
+        public static byte[] packet;
+        public static int bytelenght { get; }
+
+        private static int databuffersize;
+        
+        public Packet(int _databuffersize)
+        {
+            databuffersize = _databuffersize;
+        }
+
+
+        public static void Setpacket(string _string)
+        {
+            packet = new byte[databuffersize];
+            packet = Encoding.ASCII.GetBytes(_string);
+        }
+        public static void GetPacket(string _output)
+        {
+            switch (_output)
+            {
+                case "byte":
+                    MSG_byte = packet;
+                    break;
+                case "string":
+                    MSG_string = Encoding.ASCII.GetString(packet);
+                    break;
+            }
+        }
+
+        public static string ToString(byte[] _bytes)
+        {
+            try
+            {
+                return Encoding.ASCII.GetString(_bytes);
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Sth happend... {e}");
+            }
+        }
+        public static byte[] Tobyte(string _string)
+        {
+            try
+            {
+                return Encoding.ASCII.GetBytes(_string);
+            }
+            catch(Exception e)
+            {
+                throw new Exception($"sth happend... {e}");
             }
         }
     }

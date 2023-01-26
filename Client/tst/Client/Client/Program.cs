@@ -1,6 +1,4 @@
-﻿using System;
-using System.Net;
-using System.Net.Sockets;
+﻿using System.Net.Sockets;
 using System.Text;
 
 namespace Client
@@ -23,6 +21,7 @@ namespace Client
     {
         public static Client instance;
         public static int databuffersize = 4096; //4 MB
+        public static int counter = 0;
 
         public string ip = "127.0.0.1";
         public int port = 38532;
@@ -70,28 +69,9 @@ namespace Client
                 }
 
                 stream = socket.GetStream();
-
-                while (true)
-                {
-
-                    string msg = Console.ReadLine();
-                    byte[] sendbuffer = new byte[databuffersize];
-                    sendbuffer = Encoding.ASCII.GetBytes(msg);
-                    stream.BeginWrite(sendbuffer,0,sendbuffer.Length,writecallback,null);
-                }
-                //stream.BeginRead(buffer, 0, databuffersize, readcallback, null);
+                stream.BeginRead(buffer, 0, buffer.Length, readcallback, null);
             }
-            private void writecallback(IAsyncResult _result)
-            {
-                try
-                {
-                    stream.EndWrite(_result);
-                }
-                catch(Exception e)
-                {
-                    Console.WriteLine($"Exeption {e} ocurred");
-                }
-            }
+            
             private void readcallback(IAsyncResult _resault)
             {
                 try
@@ -107,6 +87,7 @@ namespace Client
                     Array.Copy(buffer, _data, _bytecount);
 
                     //Data Hnadeling
+                    Console.WriteLine($"Server said {Encoding.ASCII.GetString(_data)}");
 
                     stream.BeginRead(buffer, 0, databuffersize, readcallback, null);
                 }
