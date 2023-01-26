@@ -50,6 +50,7 @@ namespace Server
                 if (Clients[s].tcp.socket == null)
                 {
                     Clients[s].tcp.Connect(client);
+                    //ServerSend.Welcome($"Welcome Client: {client.Client.RemoteEndPoint}",s);
                     return;
                 }
             }
@@ -81,9 +82,8 @@ namespace Server
             public TcpClient? socket;
 
             private readonly int id;
-            private NetworkStream? stream;
+            public NetworkStream? stream;
             private byte[]? buffer;
-            private byte[]? sendbuffer;
 
             public TCP(int _id)
             {
@@ -127,9 +127,17 @@ namespace Server
             }
         }
     }
-    class ServerSend
+    static class ServerSend
     {
+        public static void Welcome(string _msg,int _ClientID)
+        {
+            TcpClient _socket = Server.Clients[_ClientID].tcp.socket;
+            NetworkStream stream = Server.Clients[_ClientID].tcp.stream;
 
+            byte[] data = Encoding.ASCII.GetBytes(_msg);
+
+            stream.BeginWrite(data, 0, data.Length, null, null);
+        }
     }
     class Packet
     {
